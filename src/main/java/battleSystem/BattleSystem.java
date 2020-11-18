@@ -1,10 +1,10 @@
-package basicTextGame;
+package battleSystem;
 
 import java.util.Scanner;
 import java.util.Random;
 
-public class Main {
-  public static void main(String[] args) {
+public class BattleSystem {
+  public static void battle() {
     Scanner in = new Scanner(System.in);
     Random rand = new Random();
 

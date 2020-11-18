@@ -1,4 +1,4 @@
-package basicTextGame;
+package battleSystem;
 
 import java.util.Random;
 
