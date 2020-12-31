@@ -3,10 +3,10 @@ package battleSystem;
 import java.util.Scanner;
 import java.util.Random;
 
-import characterCreation.PlayerSpreadsheet;
+import characterCreation.CharacterSpreadsheet;
 
 public class BattleSystem {
-  public static void battle(PlayerSpreadsheet playerSpreadsheet) {
+  public static void battle(CharacterSpreadsheet playerSpreadsheet) {
     Scanner in = new Scanner(System.in);
     Random rand = new Random();
 

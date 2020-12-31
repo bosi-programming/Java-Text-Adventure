@@ -1,6 +1,6 @@
 package characterCreation;
 
-public class PlayerSpreadsheet {
+public class CharacterSpreadsheet {
   private String name;
   private String race;
   private String className;
@@ -17,7 +17,7 @@ public class PlayerSpreadsheet {
   private String armor;
   private int armorDefense;
 
-  public PlayerSpreadsheet() {
+  public CharacterSpreadsheet() {
     this.name = "Jorisvaldo";
     this.race = "human";
     this.className = "warrior";
@@ -34,7 +34,7 @@ public class PlayerSpreadsheet {
     this.armorDefense = 0;
   }
 
-  public PlayerSpreadsheet(String name, String race, String className, int strength, int dexterity, int constitution,
+  public CharacterSpreadsheet(String name, String race, String className, int strength, int dexterity, int constitution,
       int intelligence, int wisdom, int charisma) {
     this.name = name;
     this.race = race;
@@ -78,7 +78,7 @@ public class PlayerSpreadsheet {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    PlayerSpreadsheet other = (PlayerSpreadsheet) obj;
+    CharacterSpreadsheet other = (CharacterSpreadsheet) obj;
     if (charisma != other.charisma)
       return false;
     if (className == null) {

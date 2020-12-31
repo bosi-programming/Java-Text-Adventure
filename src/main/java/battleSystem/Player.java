@@ -2,7 +2,7 @@ package battleSystem;
 
 import java.util.Random;
 
-import characterCreation.PlayerSpreadsheet;
+import characterCreation.CharacterSpreadsheet;
 
 public class Player {
   private int health;
@@ -22,7 +22,7 @@ public class Player {
     this.armorDefense = 0;
   }
 
-  public Player(PlayerSpreadsheet playerSpreadsheet) {
+  public Player(CharacterSpreadsheet playerSpreadsheet) {
     this.health = playerSpreadsheet.getConstitution() * 10;
     this.maxHealth = playerSpreadsheet.getConstitution() * 10;
     this.attackDamage = playerSpreadsheet.getStrength() * 5;
