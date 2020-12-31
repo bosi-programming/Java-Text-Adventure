@@ -14,8 +14,8 @@ public class BattleSystem {
     String[] enemies = { "Skeleton", "Zombie", "Warrior", "Assassin" };
     int healthPotionHealAmount = 30;
 
-    // Player
-    Player player = new Player(playerSpreadsheet);
+    // Character
+    Character player = new Character(playerSpreadsheet);
 
     boolean running = true;
 

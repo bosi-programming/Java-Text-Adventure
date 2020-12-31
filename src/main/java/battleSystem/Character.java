@@ -4,7 +4,7 @@ import java.util.Random;
 
 import characterCreation.CharacterSpreadsheet;
 
-public class Player {
+public class Character {
   private int health;
   private int maxHealth;
   private int attackDamage;
@@ -13,7 +13,7 @@ public class Player {
   private int armorDefense;
   Random rand = new Random();
 
-  public Player() {
+  public Character() {
     this.health = 100;
     this.maxHealth = 100;
     this.attackDamage = 50;
@@ -22,7 +22,7 @@ public class Player {
     this.armorDefense = 0;
   }
 
-  public Player(CharacterSpreadsheet playerSpreadsheet) {
+  public Character(CharacterSpreadsheet playerSpreadsheet) {
     this.health = playerSpreadsheet.getConstitution() * 10;
     this.maxHealth = playerSpreadsheet.getConstitution() * 10;
     this.attackDamage = playerSpreadsheet.getStrength() * 5;
@@ -31,7 +31,7 @@ public class Player {
     this.armorDefense = playerSpreadsheet.getArmorDefense();
   }
 
-  public Player(int health, int attackDamage, int numHealthPots) {
+  public Character(int health, int attackDamage, int numHealthPots) {
     this.health = health;
     this.maxHealth = health;
     this.attackDamage = attackDamage;
