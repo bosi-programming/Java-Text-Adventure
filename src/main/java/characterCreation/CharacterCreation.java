@@ -4,12 +4,7 @@ import java.util.Scanner;
 
 public class CharacterCreation {
   public static PlayerSpreadsheet createCharacter() {
-    int strength = 10;
-    int dexterity = 10;
-    int constitution = 10;
-    int intelligence = 10;
-    int wisdom = 10;
-    int charisma = 10;
+    PlayerSpreadsheet player = new PlayerSpreadsheet();
 
     Scanner in = new Scanner(System.in);
 
@@ -22,40 +17,49 @@ public class CharacterCreation {
     System.out.println("Your character name is: " + name);
     System.out.println("_____________________________________________");
 
-    System.out.println("Write the name of your race");
-    String race = in.nextLine();
+    chooseRace(player, in);
+    chooseClass(player, in);
+
+    return player;
+  }
+
+  private static void chooseRace(PlayerSpreadsheet player, Scanner in) {
+    System.out.println("Write the name of your race (human, elf, hobbit, halfling or orc)");
+
+    String race = in.nextLine().toLowerCase();
+
     if (race.equals("human")) {
-      intelligence += 2;
+      player.setIntelligence(player.getIntelligence() + 2);
     } else if (race.equals("elf")) {
-      wisdom += 2;
-      dexterity += 2;
-      constitution -= 2;
+      player.setWisdom(player.getWisdom() + 2);
+      player.setDexterity(player.getDexterity() + 2);
+      player.setConstitution(player.getConstitution() - 2);
     } else if (race.equals("hobbit") | race.equals("halfling")) {
-      dexterity += 2;
-      constitution += 2;
-      charisma -= 2;
+      player.setDexterity(player.getDexterity() + 2);
+      player.setConstitution(player.getConstitution() + 2);
+      player.setCharisma(player.getCharisma() - 2);
     } else if (race.equals("orc")) {
-      strength += 2;
+      player.setStrength(player.getStrength() + 2);
     }
     System.out.println("Your character race is: " + race);
+  }
 
-    System.out.println("Write the name of your class");
-    String className = in.nextLine();
+  private static void chooseClass(PlayerSpreadsheet player, Scanner in) {
+    System.out.println("Write the name of your class (warrior, mage, cleric or druid)");
+
+    String className = in.nextLine().toLowerCase();
+
     if (className.equals("warrior") | className.equals("fighter")) {
-      strength += 2;
-      constitution += 2;
+      player.setStrength(player.getStrength() + 2);
+      player.setConstitution(player.getConstitution() + 2);
     } else if (className.equals("mage") | className.equals("wizard") | className.equals("sorcerer")) {
-      intelligence += 2;
-      constitution -= 2;
+      player.setIntelligence(player.getIntelligence() + 2);
+      player.setConstitution(player.getConstitution() - 2);
     } else if (className.equals("cleric") | className.equals("druid")) {
-      wisdom += 2;
-      dexterity -= 2;
+      player.setWisdom(player.getWisdom() + 2);
+      player.setDexterity(player.getDexterity() + 2);
     }
     System.out.println("Your character class is: " + className);
 
-    PlayerSpreadsheet player = new PlayerSpreadsheet(name, race, className, strength, dexterity, constitution,
-        intelligence, wisdom, charisma);
-
-    return player;
   }
 }

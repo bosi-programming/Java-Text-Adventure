@@ -11,6 +11,12 @@ public class PlayerSpreadsheet {
   private int wisdom;
   private int charisma;
 
+  private int numHealthPots;
+  private String weapon;
+  private int weaponDamage;
+  private String armor;
+  private int armorDefense;
+
   public PlayerSpreadsheet() {
     this.name = "Jorisvaldo";
     this.race = "human";
@@ -21,6 +27,11 @@ public class PlayerSpreadsheet {
     this.intelligence = 10;
     this.wisdom = 10;
     this.charisma = 10;
+    this.numHealthPots = 3;
+    this.weapon = "";
+    this.armor = "";
+    this.weaponDamage = 0;
+    this.armorDefense = 0;
   }
 
   public PlayerSpreadsheet(String name, String race, String className, int strength, int dexterity, int constitution,
@@ -34,42 +45,13 @@ public class PlayerSpreadsheet {
     this.intelligence = intelligence;
     this.wisdom = wisdom;
     this.charisma = charisma;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public int getStrength() {
-    return strength;
-  }
-
-  public int getDexterity() {
-    return dexterity;
-  }
-
-  public int getConstitution() {
-    return constitution;
-  }
-
-  public int getIntelligence() {
-    return intelligence;
-  }
-
-  public int getWisdom() {
-    return wisdom;
-  }
-
-  public int getCharisma() {
-    return charisma;
-  }
-
-  public String getRace() {
-    return race;
-  }
-
-  public String getClassName() {
-    return className;
+    this.numHealthPots = 3;
+    this.weaponDamage = 0;
+    this.armorDefense = 0;
+    this.weapon = "";
+    this.armor = "";
+    this.weaponDamage = 0;
+    this.armorDefense = 0;
   }
 
   @Override
@@ -125,5 +107,117 @@ public class PlayerSpreadsheet {
     if (wisdom != other.wisdom)
       return false;
     return true;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getRace() {
+    return race;
+  }
+
+  public void setRace(String race) {
+    this.race = race;
+  }
+
+  public String getClassName() {
+    return className;
+  }
+
+  public void setClassName(String className) {
+    this.className = className;
+  }
+
+  public int getStrength() {
+    return strength;
+  }
+
+  public void setStrength(int strength) {
+    this.strength = strength;
+  }
+
+  public int getDexterity() {
+    return dexterity;
+  }
+
+  public void setDexterity(int dexterity) {
+    this.dexterity = dexterity;
+  }
+
+  public int getConstitution() {
+    return constitution;
+  }
+
+  public void setConstitution(int constitution) {
+    this.constitution = constitution;
+  }
+
+  public int getIntelligence() {
+    return intelligence;
+  }
+
+  public void setIntelligence(int intelligence) {
+    this.intelligence = intelligence;
+  }
+
+  public int getWisdom() {
+    return wisdom;
+  }
+
+  public void setWisdom(int wisdom) {
+    this.wisdom = wisdom;
+  }
+
+  public int getCharisma() {
+    return charisma;
+  }
+
+  public void setCharisma(int charisma) {
+    this.charisma = charisma;
+  }
+
+  public int getNumHealthPots() {
+    return numHealthPots;
+  }
+
+  public void setNumHealthPots(int numHealthPots) {
+    this.numHealthPots = numHealthPots;
+  }
+
+  public String getWeapon() {
+    return weapon;
+  }
+
+  public void setWeapon(String weapon) {
+    this.weapon = weapon;
+  }
+
+  public int getWeaponDamage() {
+    return weaponDamage;
+  }
+
+  public void setWeaponDamage(int weaponDamage) {
+    this.weaponDamage = weaponDamage;
+  }
+
+  public String getArmor() {
+    return armor;
+  }
+
+  public void setArmor(String armor) {
+    this.armor = armor;
+  }
+
+  public int getArmorDefense() {
+    return armorDefense;
+  }
+
+  public void setArmorDefense(int armorDefense) {
+    this.armorDefense = armorDefense;
   }
 }

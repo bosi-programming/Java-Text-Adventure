@@ -3,8 +3,10 @@ package battleSystem;
 import java.util.Scanner;
 import java.util.Random;
 
+import characterCreation.PlayerSpreadsheet;
+
 public class BattleSystem {
-  public static void battle() {
+  public static void battle(PlayerSpreadsheet playerSpreadsheet) {
     Scanner in = new Scanner(System.in);
     Random rand = new Random();
 
@@ -13,7 +15,7 @@ public class BattleSystem {
     int healthPotionHealAmount = 30;
 
     // Player
-    Player player = new Player();
+    Player player = new Player(playerSpreadsheet);
 
     boolean running = true;
 

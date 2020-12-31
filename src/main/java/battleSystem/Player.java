@@ -2,11 +2,15 @@ package battleSystem;
 
 import java.util.Random;
 
+import characterCreation.PlayerSpreadsheet;
+
 public class Player {
   private int health;
   private int maxHealth;
   private int attackDamage;
   private int numHealthPots;
+  private int weaponDamage;
+  private int armorDefense;
   Random rand = new Random();
 
   public Player() {
@@ -14,12 +18,26 @@ public class Player {
     this.maxHealth = 100;
     this.attackDamage = 50;
     this.numHealthPots = 3;
+    this.weaponDamage = 0;
+    this.armorDefense = 0;
   }
+
+  public Player(PlayerSpreadsheet playerSpreadsheet) {
+    this.health = playerSpreadsheet.getConstitution() * 10;
+    this.maxHealth = playerSpreadsheet.getConstitution() * 10;
+    this.attackDamage = playerSpreadsheet.getStrength() * 5;
+    this.numHealthPots = playerSpreadsheet.getNumHealthPots();
+    this.weaponDamage = playerSpreadsheet.getWeaponDamage();
+    this.armorDefense = playerSpreadsheet.getArmorDefense();
+  }
+
   public Player(int health, int attackDamage, int numHealthPots) {
     this.health = health;
     this.maxHealth = health;
     this.attackDamage = attackDamage;
     this.numHealthPots = numHealthPots;
+    this.weaponDamage = 0;
+    this.armorDefense = 0;
   }
 
   public int getHealth() {
@@ -46,10 +64,14 @@ public class Player {
   }
 
   public int dealDamage() {
-    return rand.nextInt(this.attackDamage);
+    return rand.nextInt(this.attackDamage) + this.weaponDamage;
   }
+
   public int receiveDamage(int damage) {
-    this.setHealth(this.health - damage);
+    int newLife = this.health - damage + this.armorDefense;
+    if (newLife < this.health) {
+      this.setHealth(newLife);
+    }
     return this.health;
   }
 

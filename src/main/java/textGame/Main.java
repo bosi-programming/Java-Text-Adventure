@@ -8,5 +8,6 @@ import static characterCreation.CharacterCreation.createCharacter;
 public class Main {
   public static void main(String[] args) {
     PlayerSpreadsheet player = createCharacter();
+    battle(player);
   }
 }
