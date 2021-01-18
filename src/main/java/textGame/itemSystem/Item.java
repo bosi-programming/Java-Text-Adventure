@@ -1,4 +1,4 @@
-package itemSystem;
+package textGame.itemSystem;
 
 public class Item {
   private String name;

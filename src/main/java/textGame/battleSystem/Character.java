@@ -1,12 +1,14 @@
-package battleSystem;
+package textGame.battleSystem;
 
 import java.util.Random;
 
-import characterCreation.CharacterSpreadsheet;
+import textGame.characterCreation.CharacterSpreadsheet;
 
 public class Character {
   private int health;
+  private int mp;
   private int maxHealth;
+  private int maxMp;
   private int attackDamage;
   private int numHealthPots;
   private int weaponDamage;
@@ -16,6 +18,8 @@ public class Character {
   public Character() {
     this.health = 100;
     this.maxHealth = 100;
+    this.mp = 20;
+    this.maxMp = 20;
     this.attackDamage = 50;
     this.numHealthPots = 3;
     this.weaponDamage = 0;
@@ -25,10 +29,12 @@ public class Character {
   public Character(CharacterSpreadsheet playerSpreadsheet) {
     this.health = playerSpreadsheet.getConstitution() * 10;
     this.maxHealth = playerSpreadsheet.getConstitution() * 10;
+    this.mp = playerSpreadsheet.getIntelligence() * 5;
+    this.maxMp = playerSpreadsheet.getIntelligence() * 5;
     this.attackDamage = playerSpreadsheet.getStrength() * 5;
     this.numHealthPots = playerSpreadsheet.getNumHealthPots();
-    this.weaponDamage = playerSpreadsheet.getWeaponDamage();
-    this.armorDefense = playerSpreadsheet.getArmorDefense();
+    this.weaponDamage = playerSpreadsheet.getWeapon().getDamage();
+    this.armorDefense = playerSpreadsheet.getArmor().getDefense() + playerSpreadsheet.getShield().getDefense();
   }
 
   public Character(int health, int attackDamage, int numHealthPots) {

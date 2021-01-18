@@ -1,4 +1,4 @@
-package itemSystem;
+package textGame.itemSystem;
 
 public class Weapon extends Item {
   private int damage;

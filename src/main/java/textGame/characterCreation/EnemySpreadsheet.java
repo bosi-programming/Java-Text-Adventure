@@ -1,4 +1,4 @@
-package characterCreation;
+package textGame.characterCreation;
 
 public class EnemySpreadsheet {
   private String name;

@@ -1,4 +1,4 @@
-package characterCreation;
+package textGame.characterCreation;
 
 import java.util.Scanner;
 

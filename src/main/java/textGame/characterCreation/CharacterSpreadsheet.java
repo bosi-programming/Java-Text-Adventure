@@ -1,8 +1,8 @@
-package characterCreation;
+package textGame.characterCreation;
 
-import itemSystem.Armor;
-import itemSystem.ArmorType;
-import itemSystem.Weapon;
+import textGame.itemSystem.Armor;
+import textGame.itemSystem.ArmorType;
+import textGame.itemSystem.Weapon;
 
 public class CharacterSpreadsheet {
   private String name;

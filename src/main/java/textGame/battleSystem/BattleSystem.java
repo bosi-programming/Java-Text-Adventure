@@ -1,9 +1,9 @@
-package battleSystem;
+package textGame.battleSystem;
 
 import java.util.Scanner;
 import java.util.Random;
 
-import characterCreation.CharacterSpreadsheet;
+import textGame.characterCreation.CharacterSpreadsheet;
 
 public class BattleSystem {
   public static void battle(CharacterSpreadsheet playerSpreadsheet) {

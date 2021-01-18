@@ -1,9 +1,9 @@
 package textGame;
 
-import characterCreation.CharacterSpreadsheet;
+import textGame.characterCreation.CharacterSpreadsheet;
 
-import static battleSystem.BattleSystem.battle;
-import static characterCreation.CharacterCreation.createCharacter;
+import static textGame.battleSystem.BattleSystem.battle;
+import static textGame.characterCreation.CharacterCreation.createCharacter;
 
 public class Main {
   public static void main(String[] args) {
