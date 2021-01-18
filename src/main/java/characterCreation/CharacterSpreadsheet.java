@@ -1,5 +1,7 @@
 package characterCreation;
 
+import itemSystem.*;
+
 public class CharacterSpreadsheet {
   private String name;
   private String race;
@@ -12,10 +14,9 @@ public class CharacterSpreadsheet {
   private int charisma;
 
   private int numHealthPots;
-  private String weapon;
-  private int weaponDamage;
-  private String armor;
-  private int armorDefense;
+  private Weapon weapon;
+  private Armor armor;
+  private Armor shield;
 
   public CharacterSpreadsheet() {
     this.name = "Jorisvaldo";
@@ -28,10 +29,6 @@ public class CharacterSpreadsheet {
     this.wisdom = 10;
     this.charisma = 10;
     this.numHealthPots = 3;
-    this.weapon = "";
-    this.armor = "";
-    this.weaponDamage = 0;
-    this.armorDefense = 0;
   }
 
   public CharacterSpreadsheet(String name, String race, String className, int strength, int dexterity, int constitution,
@@ -46,12 +43,6 @@ public class CharacterSpreadsheet {
     this.wisdom = wisdom;
     this.charisma = charisma;
     this.numHealthPots = 3;
-    this.weaponDamage = 0;
-    this.armorDefense = 0;
-    this.weapon = "";
-    this.armor = "";
-    this.weaponDamage = 0;
-    this.armorDefense = 0;
   }
 
   @Override
@@ -189,35 +180,27 @@ public class CharacterSpreadsheet {
     this.numHealthPots = numHealthPots;
   }
 
-  public String getWeapon() {
-    return weapon;
-  }
-
-  public void setWeapon(String weapon) {
-    this.weapon = weapon;
-  }
-
-  public int getWeaponDamage() {
-    return weaponDamage;
-  }
-
-  public void setWeaponDamage(int weaponDamage) {
-    this.weaponDamage = weaponDamage;
-  }
-
-  public String getArmor() {
-    return armor;
-  }
-
-  public void setArmor(String armor) {
+  public void setArmor(Armor armor) {
     this.armor = armor;
   }
 
-  public int getArmorDefense() {
-    return armorDefense;
+  public Armor getShield() {
+    return shield;
   }
 
-  public void setArmorDefense(int armorDefense) {
-    this.armorDefense = armorDefense;
+  public void setShield(Armor shield) {
+    this.shield = shield;
+  }
+
+  public Weapon getWeapon() {
+    return weapon;
+  }
+
+  public void setWeapon(Weapon weapon) {
+    this.weapon = weapon;
+  }
+
+  public Armor getArmor() {
+    return armor;
   }
 }
