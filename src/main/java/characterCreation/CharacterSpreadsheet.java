@@ -1,6 +1,8 @@
 package characterCreation;
 
-import itemSystem.*;
+import itemSystem.Armor;
+import itemSystem.ArmorType;
+import itemSystem.Weapon;
 
 public class CharacterSpreadsheet {
   private String name;
@@ -180,16 +182,22 @@ public class CharacterSpreadsheet {
     this.numHealthPots = numHealthPots;
   }
 
-  public void setArmor(Armor armor) {
-    this.armor = armor;
+  public void setArmorOrShield(Armor armor) {
+    if (armor.getType() == ArmorType.Armor) {
+      this.armor = armor;
+    } else if (armor.getType() == ArmorType.Shield) {
+      this.shield = armor;
+    } else {
+      System.out.println("Error on setting a new armor");
+    }
+  }
+
+  public Armor getArmor() {
+    return armor;
   }
 
   public Armor getShield() {
     return shield;
-  }
-
-  public void setShield(Armor shield) {
-    this.shield = shield;
   }
 
   public Weapon getWeapon() {
@@ -198,9 +206,5 @@ public class CharacterSpreadsheet {
 
   public void setWeapon(Weapon weapon) {
     this.weapon = weapon;
-  }
-
-  public Armor getArmor() {
-    return armor;
   }
 }
