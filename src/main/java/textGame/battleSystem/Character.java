@@ -5,21 +5,14 @@ import java.util.Random;
 import textGame.characterCreation.CharacterSpreadsheet;
 
 public class Character {
-  private int health;
-  private int mp;
-  private int maxHealth;
-  private int maxMp;
   private int attackDamage;
   private int numHealthPots;
   private int weaponDamage;
+  private int elementalDamage;
   private int armorDefense;
   Random rand = new Random();
 
   public Character() {
-    this.health = 100;
-    this.maxHealth = 100;
-    this.mp = 20;
-    this.maxMp = 20;
     this.attackDamage = 50;
     this.numHealthPots = 3;
     this.weaponDamage = 0;
@@ -27,35 +20,25 @@ public class Character {
   }
 
   public Character(CharacterSpreadsheet playerSpreadsheet) {
-    this.health = playerSpreadsheet.getConstitution() * 10;
-    this.maxHealth = playerSpreadsheet.getConstitution() * 10;
-    this.mp = playerSpreadsheet.getIntelligence() * 5;
-    this.maxMp = playerSpreadsheet.getIntelligence() * 5;
     this.attackDamage = playerSpreadsheet.getStrength() * 5;
     this.numHealthPots = playerSpreadsheet.getNumHealthPots();
-    this.weaponDamage = playerSpreadsheet.getWeapon().getDamage();
-    this.armorDefense = playerSpreadsheet.getArmor().getDefense() + playerSpreadsheet.getShield().getDefense();
+    if (playerSpreadsheet.getWeapon() != null) {
+      this.weaponDamage = playerSpreadsheet.getWeapon().getDamage();
+      this.elementalDamage = playerSpreadsheet.getWeapon().getElementalDamage();
+    }
+    if (playerSpreadsheet.getArmor() != null) {
+      this.armorDefense += playerSpreadsheet.getArmor().getDefense();
+    }
+    if(playerSpreadsheet.getShield() != null) {
+      this.armorDefense += playerSpreadsheet.getShield().getDefense();
+    }
   }
 
   public Character(int health, int attackDamage, int numHealthPots) {
-    this.health = health;
-    this.maxHealth = health;
     this.attackDamage = attackDamage;
     this.numHealthPots = numHealthPots;
     this.weaponDamage = 0;
     this.armorDefense = 0;
-  }
-
-  public int getHealth() {
-    return this.health;
-  }
-
-  public void setHealth(int value) {
-    if (value <= this.maxHealth) {
-      this.health = value;
-    } else {
-      this.health = this.maxHealth;
-    }
   }
 
   public void setHealthPotions(int value) {
@@ -70,7 +53,7 @@ public class Character {
   }
 
   public int dealDamage() {
-    return rand.nextInt(this.attackDamage) + this.weaponDamage;
+    return rand.nextInt(this.attackDamage) + this.weaponDamage + this.elementalDamage;
   }
 
   public int receiveDamage(int damage) {

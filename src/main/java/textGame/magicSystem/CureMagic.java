@@ -10,4 +10,8 @@ public class CureMagic extends Magic {
   public CureMagic(CharacterSpreadsheet character) {
     super(getMagicName(namesArray, character.getWisdom()), getMagicCost(costsArray, character.getWisdom()), getMagicImpact(impactBaseArray, character.getWisdom()), MagicType.Cure);
   }
+
+  public CureMagic(int creatorWisdom) {
+    super(getMagicName(namesArray, creatorWisdom), 0, getMagicImpact(impactBaseArray, creatorWisdom), MagicType.Cure);
+  }
 }
