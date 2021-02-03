@@ -2,7 +2,7 @@ package textGame.battleSystem;
 
 import java.util.Random;
 
-import textGame.characterCreation.CharacterSpreadsheet;
+import textGame.characterCreation.PlayerSpreadsheet;
 
 public class Character {
   private int attackDamage;
@@ -19,7 +19,7 @@ public class Character {
     this.armorDefense = 0;
   }
 
-  public Character(CharacterSpreadsheet playerSpreadsheet) {
+  public Character(PlayerSpreadsheet playerSpreadsheet) {
     this.attackDamage = playerSpreadsheet.getStrength() * 5;
     this.numHealthPots = playerSpreadsheet.getNumHealthPots();
     if (playerSpreadsheet.getWeapon() != null) {

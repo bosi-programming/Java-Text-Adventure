@@ -9,7 +9,7 @@ import textGame.itemSystem.Weapon;
 import textGame.magicSystem.Magic;
 import textGame.magicSystem.MagicType;
 
-public class CharacterSpreadsheet extends Character {
+public class PlayerSpreadsheet extends Character {
   private String race;
   private String className;
 
@@ -21,7 +21,7 @@ public class CharacterSpreadsheet extends Character {
   private ArrayList<Magic> knowMagics;
   private ArrayList<Item> items;
 
-  public CharacterSpreadsheet() {
+  public PlayerSpreadsheet() {
     super();
     this.race = "human";
     this.className = "warrior";
@@ -36,9 +36,10 @@ public class CharacterSpreadsheet extends Character {
     this.items = items;
   }
 
-  public CharacterSpreadsheet(String name, String race, String className, int strength, int dexterity, int constitution,
-      int intelligence, int wisdom, int charisma, ArrayList<Magic> magics, ArrayList<Item> items, MagicType elementalWeakness) {
-    super(name, strength, dexterity,constitution,intelligence, wisdom, charisma, elementalWeakness);
+  public PlayerSpreadsheet(String name, String race, String className, int strength, int dexterity, int constitution,
+      int intelligence, int wisdom, int charisma, ArrayList<Magic> magics, ArrayList<Item> items,
+      MagicType elementalWeakness) {
+    super(name, strength, dexterity, constitution, intelligence, wisdom, charisma, elementalWeakness);
     this.race = race;
     this.className = className;
     this.numHealthPots = 3;
@@ -74,11 +75,17 @@ public class CharacterSpreadsheet extends Character {
   public void setArmorOrShield(Armor armor) {
     if (armor.getType() == ArmorType.Armor) {
       this.armor = armor;
+      this.setDefense(this.getDefense() + armor.getDefense());
     } else if (armor.getType() == ArmorType.Shield) {
       this.shield = armor;
+      this.setDefense(this.getDefense() + shield.getDefense());
     } else {
       System.out.println("Error on setting a new armor");
     }
+  }
+
+  public int getArmorValue() {
+    return armor.getDefense() + shield.getDefense();
   }
 
   public Armor getArmor() {
@@ -99,10 +106,12 @@ public class CharacterSpreadsheet extends Character {
 
   public void setArmor(Armor armor) {
     this.armor = armor;
+    this.setDefense(this.getDefense() + armor.getDefense());
   }
 
   public void setShield(Armor shield) {
     this.shield = shield;
+    this.setDefense(this.getDefense() + shield.getDefense());
   }
 
   public ArrayList<Magic> getKnowMagics() {

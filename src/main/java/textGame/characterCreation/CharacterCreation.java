@@ -3,8 +3,8 @@ package textGame.characterCreation;
 import java.util.Scanner;
 
 public class CharacterCreation {
-  public static CharacterSpreadsheet createCharacter() {
-    CharacterSpreadsheet player = new CharacterSpreadsheet();
+  public static PlayerSpreadsheet createCharacter() {
+    PlayerSpreadsheet player = new PlayerSpreadsheet();
 
     Scanner in = new Scanner(System.in);
 
@@ -23,7 +23,7 @@ public class CharacterCreation {
     return player;
   }
 
-  private static void chooseRace(CharacterSpreadsheet player, Scanner in) {
+  private static void chooseRace(PlayerSpreadsheet player, Scanner in) {
     System.out.println("Write the name of your race (human, elf, hobbit, halfling or orc)");
 
     String race = in.nextLine().toLowerCase();
@@ -44,7 +44,7 @@ public class CharacterCreation {
     System.out.println("Your character race is: " + race);
   }
 
-  private static void chooseClass(CharacterSpreadsheet player, Scanner in) {
+  private static void chooseClass(PlayerSpreadsheet player, Scanner in) {
     System.out.println("Write the name of your class (warrior, mage, cleric or druid)");
 
     String className = in.nextLine().toLowerCase();

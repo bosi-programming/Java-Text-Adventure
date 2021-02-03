@@ -3,21 +3,14 @@ package textGame.magicSystem;
 public class Magic {
   private String name;
   private int cost;
-  private int damage;
-  private int cure;
+  private int effect;
   private MagicType type;
 
   public Magic(String name, int cost, int impact, MagicType type) {
     this.name = name;
     this.cost = cost;
     this.type = type;
-    if (type == MagicType.Cure) {
-      this.cure = impact;
-      this.damage = 0;
-    } else {
-      this.cure = 0;
-      this.damage = impact;
-    }
+    this.effect = impact;
   }
 
   public static int calculateMagicCircle(int mainAttribute) {
@@ -62,19 +55,11 @@ public class Magic {
     return type;
   }
 
-  public int getDamage() {
-    return damage;
+  public int getEffect() {
+    return effect;
   }
 
-  public void setDamage(int damage) {
-    this.damage = damage;
-  }
-
-  public int getCure() {
-    return cure;
-  }
-
-  public void setCure(int cure) {
-    this.cure = cure;
+  public void setEffect(int effect) {
+    this.effect = effect;
   }
 }

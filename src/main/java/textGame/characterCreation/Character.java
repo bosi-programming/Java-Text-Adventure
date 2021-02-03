@@ -11,6 +11,7 @@ public class Character {
   private int wisdom;
   private int charisma;
 
+  private int defense;
   private int health;
   private int maxHealth;
   private int mp;
@@ -35,7 +36,15 @@ public class Character {
     this.setElementalWeakness(MagicType.Fire);
   }
 
-  Character(String name, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma,
+  public int getDefense() {
+	return defense;
+}
+
+public void setDefense(int defense) {
+	this.defense = defense;
+}
+
+Character(String name, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma,
       MagicType elementalWeakness) {
     this.name = name;
     this.strength = strength;
