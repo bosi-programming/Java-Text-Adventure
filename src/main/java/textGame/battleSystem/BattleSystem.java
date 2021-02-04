@@ -28,24 +28,8 @@ public class BattleSystem {
       System.out.println("\t# " + enemy.getName() + " appeared! #\n");
 
       while (enemy.getHealth() > 0) {
-        System.out.println("\tYour HP: " + player.getHealth());
-        System.out.println("\t" + enemy.getName() + "'s HP: " + enemy.getHealth());
-        System.out.println("\n\tWhat would you like to do?");
-        System.out.println("\t1. Attack");
-        System.out.println("\t2. Drink health potion");
-        System.out.println("\t3. Run!");
-
         String input = in.nextLine();
         if (input.equals("1")) {
-          int damageDealt = player.dealDamage();
-          int damageTaken = enemy.dealDamage();
-
-          enemy.receiveDamage(damageDealt);
-          player.receiveDamage(damageTaken);
-
-          System.out.println("\t> You strike the " + enemy.getName() + " for " + damageDealt + " damage.");
-          System.out.println("\t> You received " + damageTaken + " in retaliation!");
-
           if (player.getHealth() < 1) {
             System.out.println("\t> You have taken too much damage, you are too weak to continue!");
             break;
