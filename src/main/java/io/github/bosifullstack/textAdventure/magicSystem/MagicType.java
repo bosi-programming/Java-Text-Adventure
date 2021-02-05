@@ -1,4 +1,4 @@
-package textGame.magicSystem;
+package textAdventure.magicSystem;
 
 public enum MagicType {
   Cure("Cure"), Fire("Fire"), Water("Water"), Air("Air"), Earth("Earth"), Incolor("Incolor");

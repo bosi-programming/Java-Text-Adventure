@@ -1,13 +1,13 @@
-package textGame.characterCreation;
+package textAdventure.characterCreation;
 
 import java.util.ArrayList;
 
-import textGame.itemSystem.Armor;
-import textGame.itemSystem.ArmorType;
-import textGame.itemSystem.Item;
-import textGame.itemSystem.Weapon;
-import textGame.magicSystem.Magic;
-import textGame.magicSystem.MagicType;
+import textAdventure.itemSystem.Armor;
+import textAdventure.itemSystem.ArmorType;
+import textAdventure.itemSystem.Item;
+import textAdventure.itemSystem.Weapon;
+import textAdventure.magicSystem.Magic;
+import textAdventure.magicSystem.MagicType;
 
 public class PlayerSpreadsheet extends Character {
   private String race;

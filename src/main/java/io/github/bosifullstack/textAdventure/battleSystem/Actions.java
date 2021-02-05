@@ -1,12 +1,12 @@
-package textGame.battleSystem;
+package textAdventure.battleSystem;
 
 import java.util.Random;
 
-import textGame.characterCreation.Character;
-import textGame.itemSystem.Item;
-import textGame.itemSystem.Weapon;
-import textGame.magicSystem.Magic;
-import textGame.magicSystem.MagicType;
+import textAdventure.characterCreation.Character;
+import textAdventure.itemSystem.Item;
+import textAdventure.itemSystem.Weapon;
+import textAdventure.magicSystem.Magic;
+import textAdventure.magicSystem.MagicType;
 
 public class Actions {
   static Random rand = new Random();

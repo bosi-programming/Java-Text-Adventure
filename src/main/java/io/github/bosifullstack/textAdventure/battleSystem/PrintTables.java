@@ -1,14 +1,14 @@
-package textGame.battleSystem;
+package textAdventure.battleSystem;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import textGame.characterCreation.Character;
-import textGame.characterCreation.EnemySpreadsheet;
-import textGame.characterCreation.PlayerSpreadsheet;
-import textGame.itemSystem.Item;
-import textGame.magicSystem.Magic;
-import textGame.magicSystem.MagicType;
+import textAdventure.characterCreation.Character;
+import textAdventure.characterCreation.EnemySpreadsheet;
+import textAdventure.characterCreation.PlayerSpreadsheet;
+import textAdventure.itemSystem.Item;
+import textAdventure.magicSystem.Magic;
+import textAdventure.magicSystem.MagicType;
 
 public class PrintTables {
   private static int attackActionBtn = 1;

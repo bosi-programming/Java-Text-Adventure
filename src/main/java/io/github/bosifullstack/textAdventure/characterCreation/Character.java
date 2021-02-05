@@ -1,6 +1,6 @@
-package textGame.characterCreation;
+package textAdventure.characterCreation;
 
-import textGame.magicSystem.MagicType;
+import textAdventure.magicSystem.MagicType;
 
 public class Character {
   private String name;

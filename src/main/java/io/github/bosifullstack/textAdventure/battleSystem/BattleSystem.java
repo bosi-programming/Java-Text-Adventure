@@ -1,10 +1,10 @@
-package textGame.battleSystem;
+package textAdventure.battleSystem;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import textGame.characterCreation.EnemySpreadsheet;
-import textGame.characterCreation.PlayerSpreadsheet;
+import textAdventure.characterCreation.EnemySpreadsheet;
+import textAdventure.characterCreation.PlayerSpreadsheet;
 
 public class BattleSystem {
   public static void battle(PlayerSpreadsheet player, EnemySpreadsheet enemy) {

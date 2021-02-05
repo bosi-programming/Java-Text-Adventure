@@ -1,6 +1,6 @@
-package textGame.magicSystem;
+package textAdventure.magicSystem;
 
-import textGame.characterCreation.PlayerSpreadsheet;
+import textAdventure.characterCreation.PlayerSpreadsheet;
 
 public class FireMagic extends Magic {
   private static String[] namesArray = new String[] { "Fire", "Fira", "Firaga" };

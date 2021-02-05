@@ -1,6 +1,6 @@
-package textGame.magicSystem;
+package textAdventure.magicSystem;
 
-import textGame.characterCreation.PlayerSpreadsheet;
+import textAdventure.characterCreation.PlayerSpreadsheet;
 
 public class CureMagic extends Magic {
   private static String[] namesArray = new String[] { "Cure", "Cura", "Curaga" };

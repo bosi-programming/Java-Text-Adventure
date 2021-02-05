@@ -1,14 +1,14 @@
-package textGame.characterCreation;
+package textAdventure.characterCreation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import textGame.itemSystem.Item;
-import textGame.magicSystem.CureMagic;
-import textGame.magicSystem.FireMagic;
-import textGame.magicSystem.Magic;
-import textGame.magicSystem.WaterMagic;
+import textAdventure.itemSystem.Item;
+import textAdventure.magicSystem.CureMagic;
+import textAdventure.magicSystem.FireMagic;
+import textAdventure.magicSystem.Magic;
+import textAdventure.magicSystem.WaterMagic;
 
 public class CharacterCreation {
   public static PlayerSpreadsheet createCharacter() {

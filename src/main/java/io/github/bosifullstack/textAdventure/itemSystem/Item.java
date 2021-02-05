@@ -1,6 +1,6 @@
-package textGame.itemSystem;
+package textAdventure.itemSystem;
 
-import textGame.magicSystem.Magic;
+import textAdventure.magicSystem.Magic;
 
 public class Item {
   private String name;

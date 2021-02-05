@@ -1,6 +1,6 @@
-package textGame.magicSystem;
+package textAdventure.magicSystem;
 
-import textGame.characterCreation.PlayerSpreadsheet;
+import textAdventure.characterCreation.PlayerSpreadsheet;
 
 public class EarthMagic extends Magic {
   private static String[] namesArray = new String[] { "Earth", "Earthra", "Earthga" };

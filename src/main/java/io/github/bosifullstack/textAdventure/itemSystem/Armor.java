@@ -1,4 +1,4 @@
-package textGame.itemSystem;
+package textAdventure.itemSystem;
 
 public class Armor extends Item {
   private int defense;

@@ -1,8 +1,8 @@
-package textGame.characterCreation;
+package textAdventure.characterCreation;
 
-import textGame.itemSystem.Item;
-import textGame.magicSystem.CureMagic;
-import textGame.magicSystem.MagicType;
+import textAdventure.itemSystem.Item;
+import textAdventure.magicSystem.CureMagic;
+import textAdventure.magicSystem.MagicType;
 
 public class EnemySpreadsheet extends Character {
   private int damage;

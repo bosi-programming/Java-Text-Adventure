@@ -1,7 +1,7 @@
-package textGame.itemSystem;
+package textAdventure.itemSystem;
 
-import textGame.magicSystem.Magic;
-import textGame.magicSystem.MagicType;
+import textAdventure.magicSystem.Magic;
+import textAdventure.magicSystem.MagicType;
 
 public class Weapon extends Item {
   private int damage;

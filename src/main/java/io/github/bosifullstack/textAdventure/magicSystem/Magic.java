@@ -1,4 +1,4 @@
-package textGame.magicSystem;
+package textAdventure.magicSystem;
 
 public class Magic {
   private String name;
