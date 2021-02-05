@@ -18,8 +18,8 @@ public class PlayerSpreadsheet extends Character {
   private Armor armor;
   private Armor shield;
 
-  private ArrayList<Magic> knowMagics;
-  private ArrayList<Item> items;
+  private ArrayList<Magic> knowMagics = new ArrayList<Magic>();
+  private ArrayList<Item> items = new ArrayList<Item>();
 
   public PlayerSpreadsheet() {
     super();

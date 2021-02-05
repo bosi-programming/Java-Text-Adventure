@@ -1,6 +1,14 @@
 package textGame.characterCreation;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+
+import textGame.itemSystem.Item;
+import textGame.magicSystem.CureMagic;
+import textGame.magicSystem.FireMagic;
+import textGame.magicSystem.Magic;
+import textGame.magicSystem.WaterMagic;
 
 public class CharacterCreation {
   public static PlayerSpreadsheet createCharacter() {
@@ -15,10 +23,17 @@ public class CharacterCreation {
     System.out.println("Write the name of your character:");
     String name = in.nextLine();
     System.out.println("Your character name is: " + name);
+    player.setName(name);
     System.out.println("_____________________________________________");
 
     chooseRace(player, in);
     chooseClass(player, in);
+
+    ArrayList<Item> initialItems = new ArrayList<Item>();
+    Item potion = new Item("potion", 50, 25, new CureMagic(12));
+    Item[] initialPotions = new Item[] {potion, potion, potion};
+    initialItems.addAll(Arrays.asList(initialPotions));
+    player.setItems(initialItems);
 
     return player;
   }
@@ -55,9 +70,19 @@ public class CharacterCreation {
     } else if (className.equals("mage") | className.equals("wizard") | className.equals("sorcerer")) {
       player.setIntelligence(player.getIntelligence() + 2);
       player.setConstitution(player.getConstitution() - 2);
+
+      ArrayList<Magic> knowMagics = new ArrayList<Magic>();
+      knowMagics.add(new FireMagic(player));
+      knowMagics.add(new WaterMagic(player));
+      knowMagics.add(new CureMagic(player));
+      player.setKnowMagics(knowMagics);
     } else if (className.equals("cleric") | className.equals("druid")) {
       player.setWisdom(player.getWisdom() + 2);
       player.setDexterity(player.getDexterity() + 2);
+
+      ArrayList<Magic> knowMagics = new ArrayList<Magic>();
+      knowMagics.add(new CureMagic(player));
+      player.setKnowMagics(knowMagics);
     }
     System.out.println("Your character class is: " + className);
 

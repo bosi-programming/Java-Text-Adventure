@@ -25,22 +25,22 @@ public class Weapon extends Item {
   }
 
   public MagicType getElementalType() {
-    if(this.getMagic() != null) {
+    if (this.getMagic() != null) {
       return this.getMagic().getType();
     }
     return null;
   }
 
   public int getElementalDamage() {
-    if(this.getMagic() != null) {
-      return this.getMagic().getDamage();
+    if (this.getMagic() != null & this.getMagic().getType() != MagicType.Cure) {
+      return this.getMagic().getEffect();
     }
     return 0;
   }
 
   public int getLifeSteal() {
-    if(this.getMagic() != null) {
-      return this.getMagic().getCure();
+    if (this.getMagic() != null & this.getMagic().getType() == MagicType.Cure) {
+      return this.getMagic().getEffect();
     }
     return 0;
   }
