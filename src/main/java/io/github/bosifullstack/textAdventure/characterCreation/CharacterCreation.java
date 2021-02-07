@@ -1,14 +1,14 @@
-package textAdventure.characterCreation;
+package io.github.bosifullstack.textAdventure.characterCreation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import textAdventure.itemSystem.Item;
-import textAdventure.magicSystem.CureMagic;
-import textAdventure.magicSystem.FireMagic;
-import textAdventure.magicSystem.Magic;
-import textAdventure.magicSystem.WaterMagic;
+import io.github.bosifullstack.textAdventure.itemSystem.Item;
+import io.github.bosifullstack.textAdventure.magicSystem.CureMagic;
+import io.github.bosifullstack.textAdventure.magicSystem.FireMagic;
+import io.github.bosifullstack.textAdventure.magicSystem.Magic;
+import io.github.bosifullstack.textAdventure.magicSystem.WaterMagic;
 
 public class CharacterCreation {
   public static PlayerSpreadsheet createCharacter() {

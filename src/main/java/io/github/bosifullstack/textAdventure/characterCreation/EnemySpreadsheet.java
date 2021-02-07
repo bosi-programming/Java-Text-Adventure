@@ -1,8 +1,8 @@
-package textAdventure.characterCreation;
+package io.github.bosifullstack.textAdventure.characterCreation;
 
-import textAdventure.itemSystem.Item;
-import textAdventure.magicSystem.CureMagic;
-import textAdventure.magicSystem.MagicType;
+import io.github.bosifullstack.textAdventure.itemSystem.Item;
+import io.github.bosifullstack.textAdventure.magicSystem.CureMagic;
+import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 public class EnemySpreadsheet extends Character {
   private int damage;

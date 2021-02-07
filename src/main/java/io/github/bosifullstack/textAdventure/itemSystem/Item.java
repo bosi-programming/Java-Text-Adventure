@@ -1,6 +1,6 @@
-package textAdventure.itemSystem;
+package io.github.bosifullstack.textAdventure.itemSystem;
 
-import textAdventure.magicSystem.Magic;
+import io.github.bosifullstack.textAdventure.magicSystem.Magic;
 
 public class Item {
   private String name;

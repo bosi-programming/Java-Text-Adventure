@@ -1,12 +1,12 @@
-package textAdventure.battleSystem;
+package io.github.bosifullstack.textAdventure.battleSystem;
 
 import java.util.Random;
 
-import textAdventure.characterCreation.Character;
-import textAdventure.itemSystem.Item;
-import textAdventure.itemSystem.Weapon;
-import textAdventure.magicSystem.Magic;
-import textAdventure.magicSystem.MagicType;
+import io.github.bosifullstack.textAdventure.characterCreation.Character;
+import io.github.bosifullstack.textAdventure.itemSystem.Item;
+import io.github.bosifullstack.textAdventure.itemSystem.Weapon;
+import io.github.bosifullstack.textAdventure.magicSystem.Magic;
+import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 public class Actions {
   static Random rand = new Random();

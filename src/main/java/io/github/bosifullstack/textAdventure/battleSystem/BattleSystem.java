@@ -1,10 +1,10 @@
-package textAdventure.battleSystem;
+package io.github.bosifullstack.textAdventure.battleSystem;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import textAdventure.characterCreation.EnemySpreadsheet;
-import textAdventure.characterCreation.PlayerSpreadsheet;
+import io.github.bosifullstack.textAdventure.characterCreation.EnemySpreadsheet;
+import io.github.bosifullstack.textAdventure.characterCreation.PlayerSpreadsheet;
 
 public class BattleSystem {
   public static void battle(PlayerSpreadsheet player, EnemySpreadsheet enemy) {

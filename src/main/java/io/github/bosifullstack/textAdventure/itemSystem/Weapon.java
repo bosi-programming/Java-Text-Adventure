@@ -1,7 +1,7 @@
-package textAdventure.itemSystem;
+package io.github.bosifullstack.textAdventure.itemSystem;
 
-import textAdventure.magicSystem.Magic;
-import textAdventure.magicSystem.MagicType;
+import io.github.bosifullstack.textAdventure.magicSystem.Magic;
+import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 public class Weapon extends Item {
   private int damage;

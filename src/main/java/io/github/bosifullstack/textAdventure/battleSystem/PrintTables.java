@@ -1,14 +1,14 @@
-package textAdventure.battleSystem;
+package io.github.bosifullstack.textAdventure.battleSystem;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import textAdventure.characterCreation.Character;
-import textAdventure.characterCreation.EnemySpreadsheet;
-import textAdventure.characterCreation.PlayerSpreadsheet;
-import textAdventure.itemSystem.Item;
-import textAdventure.magicSystem.Magic;
-import textAdventure.magicSystem.MagicType;
+import io.github.bosifullstack.textAdventure.characterCreation.Character;
+import io.github.bosifullstack.textAdventure.characterCreation.EnemySpreadsheet;
+import io.github.bosifullstack.textAdventure.characterCreation.PlayerSpreadsheet;
+import io.github.bosifullstack.textAdventure.itemSystem.Item;
+import io.github.bosifullstack.textAdventure.magicSystem.Magic;
+import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 public class PrintTables {
   private static int attackActionBtn = 1;

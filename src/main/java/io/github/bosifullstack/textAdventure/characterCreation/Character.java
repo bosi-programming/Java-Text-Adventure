@@ -1,6 +1,6 @@
-package textAdventure.characterCreation;
+package io.github.bosifullstack.textAdventure.characterCreation;
 
-import textAdventure.magicSystem.MagicType;
+import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 public class Character {
   private String name;

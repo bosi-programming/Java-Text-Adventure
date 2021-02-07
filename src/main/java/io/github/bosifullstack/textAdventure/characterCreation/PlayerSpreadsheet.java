@@ -1,13 +1,13 @@
-package textAdventure.characterCreation;
+package io.github.bosifullstack.textAdventure.characterCreation;
 
 import java.util.ArrayList;
 
-import textAdventure.itemSystem.Armor;
-import textAdventure.itemSystem.ArmorType;
-import textAdventure.itemSystem.Item;
-import textAdventure.itemSystem.Weapon;
-import textAdventure.magicSystem.Magic;
-import textAdventure.magicSystem.MagicType;
+import io.github.bosifullstack.textAdventure.itemSystem.Armor;
+import io.github.bosifullstack.textAdventure.itemSystem.ArmorType;
+import io.github.bosifullstack.textAdventure.itemSystem.Item;
+import io.github.bosifullstack.textAdventure.itemSystem.Weapon;
+import io.github.bosifullstack.textAdventure.magicSystem.Magic;
+import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 public class PlayerSpreadsheet extends Character {
   private String race;

@@ -1,12 +1,15 @@
-package textAdventure;
+package io.github.bosifullstack.textAdventure;
 
-import textAdventure.characterCreation.PlayerSpreadsheet;
+import io.github.bosifullstack.textAdventure.characterCreation.PlayerSpreadsheet;
 
-import static textAdventure.battleSystem.BattleSystem.battle;
-import static textAdventure.characterCreation.CharacterCreation.createCharacter;
+import static io.github.bosifullstack.textAdventure.battleSystem.BattleSystem.battle;
+import static io.github.bosifullstack.textAdventure.characterCreation.CharacterCreation.createCharacter;
 
-import textAdventure.characterCreation.EnemySpreadsheet;
+import io.github.bosifullstack.textAdventure.characterCreation.EnemySpreadsheet;
 
+/**
+ * Main file used to preview basic features of the framework
+*/
 public class Main {
   public static void main(String[] args) {
     PlayerSpreadsheet player = createCharacter();

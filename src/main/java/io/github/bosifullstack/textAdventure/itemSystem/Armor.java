@@ -1,4 +1,4 @@
-package textAdventure.itemSystem;
+package io.github.bosifullstack.textAdventure.itemSystem;
 
 public class Armor extends Item {
   private int defense;
