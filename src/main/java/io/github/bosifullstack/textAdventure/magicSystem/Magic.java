@@ -66,7 +66,7 @@ public class Magic {
   /**
    * Get the mp cost of the magic
    * 
-   * @param costsArray    int[] - an array of impacts based on the circle of the
+   * @param impactBaseArray    int[] - an array of impacts based on the circle of the
    *                      magic - {@link calculateMagicCircle}
    * @param mainAttribute int - User/player attribute linked to the magic
    * @return int - final impact of the magic

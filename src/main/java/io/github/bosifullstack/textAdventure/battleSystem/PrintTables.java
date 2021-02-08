@@ -10,6 +10,7 @@ import io.github.bosifullstack.textAdventure.itemSystem.Item;
 import io.github.bosifullstack.textAdventure.magicSystem.Magic;
 import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
+/** Class that prints any battle choice */
 public class PrintTables {
   private static int attackActionBtn = 1;
   private static int magicActionBtn = 0;
@@ -17,6 +18,12 @@ public class PrintTables {
 
   static Scanner in = new Scanner(System.in);
 
+  /**
+   * Print that table of choices that the player has in the start of a battle
+   * 
+   * @param mainCharacter {@link PlayerSpreadsheet}
+   * @param enemy         {@link EnemySpreadsheet}
+   */
   public static void printActionsTable(PlayerSpreadsheet mainCharacter, EnemySpreadsheet enemy) {
     int tableNumber = 1;
     System.out.println("\tYour HP: " + mainCharacter.getHealth());
@@ -35,6 +42,12 @@ public class PrintTables {
     }
   }
 
+  /**
+   * Print text related to a damage or cure effect
+   * 
+   * @param character {@link Character} - Character that will receive the effect
+   * @param effect    int - total value of the effect
+   */
   public static void printEffectText(Character character, int effect) {
     if (effect >= 0) {
       System.out.println("\t> " + character.getName() + " receives " + effect + " of damage.");
@@ -43,6 +56,13 @@ public class PrintTables {
     }
   }
 
+  /**
+   * Print a table with the magic choices
+   *
+   * @param magics {@link ArrayList} of {@link Magic} - List of known magics
+   * @param player {@link Character} - The one that will use the magic
+   * @param enemy  {@link Character} - Possible receiver of a magic
+   */
   public static void printMagicTable(ArrayList<Magic> magics, Character player, Character enemy) {
     int i = 0;
     for (Magic magic : magics) {
@@ -60,6 +80,14 @@ public class PrintTables {
     }
   }
 
+  /**
+   * Print a table with the items choice
+   *
+   * @param items  {@link ArrayList} of {@link Item} - List of all items that the
+   *               player has
+   * @param player {@link Character} - The one that will use the magic
+   * @param enemy  {@link Character} - Possible receiver of a magic
+   */
   public static void printItemsTable(ArrayList<Item> items, Character player, Character enemy) {
     int i = 0;
     for (Item item : items) {
@@ -78,14 +106,17 @@ public class PrintTables {
     items.remove(Integer.parseInt(input) - 1);
   }
 
+  /** @return int - Button related to the attack action */
   public static int getAttackActionBtn() {
     return attackActionBtn;
   }
 
+  /** @return int - Button related to the item action */
   public static int getItemActionBtn() {
     return itemActionBtn;
   }
 
+  /** @return int - Button related to the magic action */
   public static int getMagicActionBtn() {
     return magicActionBtn;
   }

@@ -6,6 +6,7 @@ import java.util.Scanner;
 import io.github.bosifullstack.textAdventure.characterCreation.EnemySpreadsheet;
 import io.github.bosifullstack.textAdventure.characterCreation.PlayerSpreadsheet;
 
+/** Class that starts a battle */
 public class BattleSystem {
   public static void battle(PlayerSpreadsheet player, EnemySpreadsheet enemy) {
     Scanner in = new Scanner(System.in);

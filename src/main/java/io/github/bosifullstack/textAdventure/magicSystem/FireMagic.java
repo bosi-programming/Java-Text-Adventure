@@ -12,6 +12,7 @@ public class FireMagic extends Magic {
 
   /**
    * Creates a fire {@link Magic} using the {@link PlayerSpreadsheet}
+   * @param character {@link PlayerSpreadsheet}
    */
   public FireMagic(PlayerSpreadsheet character) {
     super(getMagicName(namesArray, character.getIntelligence()), getMagicCost(costsArray, character.getIntelligence()),
@@ -21,6 +22,7 @@ public class FireMagic extends Magic {
   /**
    * Creates a fire {@link Magic} using the creator wisdom. Mainly used to create
    * items
+   * @param creatorIntelligence int
    */
   public FireMagic(int creatorIntelligence) {
     super(getMagicName(namesArray, creatorIntelligence), 0, getMagicImpact(impactBaseArray, creatorIntelligence),

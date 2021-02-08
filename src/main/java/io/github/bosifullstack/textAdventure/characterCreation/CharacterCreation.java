@@ -10,7 +10,13 @@ import io.github.bosifullstack.textAdventure.magicSystem.FireMagic;
 import io.github.bosifullstack.textAdventure.magicSystem.Magic;
 import io.github.bosifullstack.textAdventure.magicSystem.WaterMagic;
 
+/**
+ * {@link Character} creation class used to create a new character according to
+ * user's choices
+ */
+
 public class CharacterCreation {
+  /** Static class that start the CLI interface to create new player */
   public static PlayerSpreadsheet createCharacter() {
     PlayerSpreadsheet player = new PlayerSpreadsheet();
 
@@ -31,13 +37,17 @@ public class CharacterCreation {
 
     ArrayList<Item> initialItems = new ArrayList<Item>();
     Item potion = new Item("potion", 50, 25, new CureMagic(12));
-    Item[] initialPotions = new Item[] {potion, potion, potion};
+    Item[] initialPotions = new Item[] { potion, potion, potion };
     initialItems.addAll(Arrays.asList(initialPotions));
     player.setItems(initialItems);
 
     return player;
   }
 
+  /**
+   * Creates a CLI interface to let the user choose a race and apply it to the
+   * {@link PlayerSpreadsheet}
+   */
   private static void chooseRace(PlayerSpreadsheet player, Scanner in) {
     System.out.println("Write the name of your race (human, elf, hobbit, halfling or orc)");
 
@@ -59,6 +69,10 @@ public class CharacterCreation {
     System.out.println("Your character race is: " + race);
   }
 
+  /**
+   * Creates a CLI interface to let the user choose a class and apply it to the
+   * {@link PlayerSpreadsheet}
+   */
   private static void chooseClass(PlayerSpreadsheet player, Scanner in) {
     System.out.println("Write the name of your class (warrior, mage, cleric or druid)");
 

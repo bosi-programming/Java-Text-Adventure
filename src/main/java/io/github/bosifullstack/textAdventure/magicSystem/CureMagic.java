@@ -12,6 +12,7 @@ public class CureMagic extends Magic {
 
   /**
    * Creates a cure {@link Magic} using the {@link PlayerSpreadsheet}
+   * @param character {@link PlayerSpreadsheet}
    */
   public CureMagic(PlayerSpreadsheet character) {
     super(getMagicName(namesArray, character.getWisdom()), getMagicCost(costsArray, character.getWisdom()),
@@ -21,6 +22,7 @@ public class CureMagic extends Magic {
   /**
    * Creates a cure {@link Magic} using the creator wisdom. Mainly used to create
    * potions
+   * @param creatorWisdom int
    */
   public CureMagic(int creatorWisdom) {
     super(getMagicName(namesArray, creatorWisdom), 0, getMagicImpact(impactBaseArray, creatorWisdom), MagicType.Cure);

@@ -12,6 +12,7 @@ public class AirMagic extends Magic {
 
   /**
    * Creates a air {@link Magic} using the {@link PlayerSpreadsheet}
+   * @param character {@link PlayerSpreadsheet}
    */
   public AirMagic(PlayerSpreadsheet character) {
     super(getMagicName(namesArray, character.getIntelligence()), getMagicCost(costsArray, character.getIntelligence()),
@@ -20,6 +21,7 @@ public class AirMagic extends Magic {
 
   /**
    * Creates a air {@link Magic} using the creator wisdom. Mainly used to create items
+   * @param creatorIntelligence int
    */
   public AirMagic(int creatorIntelligence) {
     super(getMagicName(namesArray, creatorIntelligence), 0, getMagicImpact(impactBaseArray, creatorIntelligence), MagicType.Cure);

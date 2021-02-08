@@ -12,6 +12,7 @@ public class EarthMagic extends Magic {
 
   /**
    * Creates a water {@link Magic} using the {@link PlayerSpreadsheet}
+   * @param character {@link PlayerSpreadsheet}
    */
   public EarthMagic(PlayerSpreadsheet character) {
     super(getMagicName(namesArray, character.getIntelligence()), getMagicCost(costsArray, character.getIntelligence()),
@@ -21,6 +22,7 @@ public class EarthMagic extends Magic {
   /**
    * Creates a earth {@link Magic} using the creator wisdom. Mainly used to create
    * items
+   * @param creatorIntelligence int
    */
   public EarthMagic(int creatorIntelligence) {
     super(getMagicName(namesArray, creatorIntelligence), 0, getMagicImpact(impactBaseArray, creatorIntelligence),

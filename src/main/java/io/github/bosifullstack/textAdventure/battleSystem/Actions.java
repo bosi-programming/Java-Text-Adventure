@@ -8,15 +8,30 @@ import io.github.bosifullstack.textAdventure.itemSystem.Weapon;
 import io.github.bosifullstack.textAdventure.magicSystem.Magic;
 import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
+/** Class with all possible actions that can be taken on a fight */
 public class Actions {
   static Random rand = new Random();
 
+  /**
+   * Deal damage - Used by those without a weapon
+   * 
+   * @param attackDamage    int - physical damage
+   * @param targetCharacter {@link Character} - Character that will take the
+   *                        damage
+   */
   public static void dealAttackDamage(int attackDamage, Character targetCharacter) {
     int physicalDamage = rand.nextInt(attackDamage) - targetCharacter.getDefense();
     targetCharacter.setHealth(targetCharacter.getHealth() - physicalDamage);
     PrintTables.printEffectText(targetCharacter, physicalDamage);
   }
 
+  /**
+   * Deal damage - Used by players with weapons
+   * 
+   * @param weapon          {@link Weapon} - Weapon used by the player
+   * @param targetCharacter {@link Character} - Character that will take the
+   *                        attack
+   */
   public static void dealAttackDamage(Weapon weapon, Character targetCharacter) {
     int physicalDamage = rand.nextInt(weapon.getDamage()) - targetCharacter.getDefense();
     int magicalDamage = weapon.getElementalDamage()
@@ -27,6 +42,12 @@ public class Actions {
     PrintTables.printEffectText(targetCharacter, totalDamage);
   }
 
+  /**
+   * Use a magic known by a character
+   * 
+   * @param magic           {@link Magic} - Magic to be used
+   * @param targetCharacter {@link Character} - Character that will take the magic
+   */
   public static void useMagic(Magic magic, Character targetCharacter) {
     int magicEffect = magic.getEffect() * typesRelation(magic.getType(), targetCharacter.getElementalWeakness());
 
@@ -34,11 +55,25 @@ public class Actions {
     PrintTables.printEffectText(targetCharacter, magicEffect);
   }
 
+  /**
+   * Use an {@link Item}
+   * 
+   * @param item            {@link Item} - Item to be used
+   * @param targetCharacter {@link Character} - Character that will use the item
+   */
   public static void useItem(Item item, Character targetCharacter) {
     useMagic(item.getMagic(), targetCharacter);
   }
 
-
+  /**
+   * Calculate relation between types of {@link Magic}
+   *
+   * @param type1 {@link MagicType} - Magic type that we want to know how much
+   *              it'll affect
+   * @param type2 {@link MagicType} - Element that we want to calculate if it is a
+   *              weekness or not to type1
+   * @return int - Multiplier between 1 and 2
+   */
   private static int typesRelation(MagicType type1, MagicType type2) {
     switch (type1) {
       case Fire:
