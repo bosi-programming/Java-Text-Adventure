@@ -3,7 +3,7 @@ package io.github.bosifullstack.textAdventure.magicSystem;
 /**
  * Class used to extend new magics for the Magic System
  */
-public class Magic {
+public abstract class Magic {
   private String name;
   private int cost;
   private int effect;
