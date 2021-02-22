@@ -16,6 +16,14 @@ public class PrintTables {
   private static int magicActionBtn = 0;
   private static int itemActionBtn = 0;
 
+  //index=0->Red, index=1->Green, index=2->Yellow, index=3->Blue 
+  private static String[] normal = {"\u001b[31m","\u001b[32m","\u001b[33m","\u001b[34m"};
+  private static String[] bold = {"\u001b[31;1m","\u001b[32;1m","\u001b[33;1m","\u001b[34;1m"};
+  private static String[] underline = {"\u001b[31;4m","\u001b[32;4m","\u001b[33;4m","\u001b[34;4m"};
+  private static String[] reversed = {"\u001b[31;7m","\u001b[32;7m","\u001b[33;7m","\u001b[34;7m"};
+
+  private static String reset = "\u001b[0m";
+
   static Scanner in = new Scanner(System.in);
 
   /**
@@ -26,19 +34,19 @@ public class PrintTables {
    */
   public static void printActionsTable(PlayerSpreadsheet mainCharacter, EnemySpreadsheet enemy) {
     int tableNumber = 1;
-    System.out.println("\tYour HP: " + mainCharacter.getHealth());
-    System.out.println("\t" + enemy.getName() + "'s HP: " + enemy.getHealth());
-    System.out.println("\n\tWhat would you like to do?");
-    System.out.println("\t" + attackActionBtn + ". Attack");
+    System.out.println("\t"+reversed[0]+"Your HP: " + mainCharacter.getHealth()+reset);
+    System.out.println("\t"+reversed[3] + enemy.getName() + "'s HP: " + enemy.getHealth()+reset);
+    System.out.println("\n\t"+normal[2]+"What would you like to do?"+reset);
+    System.out.println("\t"+normal[1] + attackActionBtn + ". Attack"+reset);
     if (mainCharacter.getKnowMagics().size() > 0) {
       tableNumber++;
       magicActionBtn = tableNumber;
-      System.out.println("\t" + magicActionBtn + ". Use magic");
+      System.out.println("\t"+normal[1] + magicActionBtn + ". Use magic"+reset);
     }
     if (mainCharacter.getItems().size() > 0) {
       tableNumber++;
       itemActionBtn = tableNumber;
-      System.out.println("\t" + itemActionBtn + ". Use item");
+      System.out.println("\t"+normal[1] + itemActionBtn + ". Use item"+reset);
     }
   }
 
@@ -50,9 +58,9 @@ public class PrintTables {
    */
   public static void printEffectText(Character character, int effect) {
     if (effect >= 0) {
-      System.out.println("\t> " + character.getName() + " receives " + effect + " of damage.");
+      System.out.println("\t> "+bold[0] + character.getName() + " receives " + effect + " of damage."+reset);
     } else {
-      System.out.println("\t> " + character.getName() + " is cured of " + -effect + " of damage.");
+      System.out.println("\t> "+underline[0] + character.getName() + " is cured of " + -effect + " of damage."+reset);
     }
   }
 
@@ -67,9 +75,9 @@ public class PrintTables {
     int i = 0;
     for (Magic magic : magics) {
       i++;
-      System.out.println("\t" + i + ". " + magic.getName());
+      System.out.println("\t"+normal[1] + i + ". " + magic.getName()+reset);
     }
-    System.out.println("\n\tWhat magic do you want to cast?");
+    System.out.println("\n\t"+normal[2]+"What magic do you want to cast?"+reset);
     String input = in.nextLine();
 
     Magic choosenMagic = magics.get(Integer.parseInt(input) - 1);
@@ -92,9 +100,9 @@ public class PrintTables {
     int i = 0;
     for (Item item : items) {
       i++;
-      System.out.println("\t" + i + ". " + item.getName());
+      System.out.println("\t"+normal[1] + i + ". " + item.getName()+reset);
     }
-    System.out.println("\n\tWhat magic do you want to cast?");
+    System.out.println("\n\t"+normal[2]+"What magic do you want to cast?"+reset);
     String input = in.nextLine();
 
     Item choosenItem = items.get(Integer.parseInt(input) - 1);
