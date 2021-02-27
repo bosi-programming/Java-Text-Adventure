@@ -16,21 +16,30 @@ import io.github.bosifullstack.textAdventure.magicSystem.WaterMagic;
  */
 
 public class CharacterCreation {
+  //index=0->Red, index=1->Green, index=2->Yellow, index=3->Blue 
+  private static String[] normal = {"\u001b[31m","\u001b[32m","\u001b[33m","\u001b[34m"};
+  private static String[] bold = {"\u001b[31;1m","\u001b[32;1m","\u001b[33;1m","\u001b[34;1m"};
+  private static String[] underline = {"\u001b[31;4m","\u001b[32;4m","\u001b[33;4m","\u001b[34;4m"};
+  private static String[] reversed = {"\u001b[31;7m","\u001b[32;7m","\u001b[33;7m","\u001b[34;7m"};
+
+  private static String reset = "\u001b[0m";
+
+
   /** Static class that start the CLI interface to create new player */
   public static PlayerSpreadsheet createCharacter() {
     PlayerSpreadsheet player = new PlayerSpreadsheet();
 
     Scanner in = new Scanner(System.in);
 
-    System.out.println("Welcome to Java Text Game!");
-    System.out.println("_____________________________________________");
-    System.out.println("Now we'll create your character");
+    System.out.println(bold[2]+"Welcome to Java Text Game!");
+    System.out.println("_____________________________________________"+reset);
+    System.out.println(reversed[1]+"Now we'll create your character"+reset);
 
     System.out.println("Write the name of your character:");
     String name = in.nextLine();
-    System.out.println("Your character name is: " + name);
+    System.out.println(bold[2]+"Your character name is: " + name+reset);
     player.setName(name);
-    System.out.println("_____________________________________________");
+    System.out.println(bold[2]+"_____________________________________________"+reset);
 
     chooseRace(player, in);
     chooseClass(player, in);
@@ -66,7 +75,7 @@ public class CharacterCreation {
     } else if (race.equals("orc")) {
       player.setStrength(player.getStrength() + 2);
     }
-    System.out.println("Your character race is: " + race);
+    System.out.println(bold[0]+"Your character race is: " + race+reset);
   }
 
   /**
@@ -98,7 +107,7 @@ public class CharacterCreation {
       knowMagics.add(new CureMagic(player));
       player.setKnowMagics(knowMagics);
     }
-    System.out.println("Your character class is: " + className);
+    System.out.println(bold[3]+"Your character class is: " + className+reset);
 
   }
 }

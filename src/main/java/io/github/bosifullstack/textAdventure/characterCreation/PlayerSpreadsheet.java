@@ -14,6 +14,15 @@ import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
  * exist.
  */
 public class PlayerSpreadsheet extends Character {
+
+  //index=0->Red, index=1->Green, index=2->Yellow, index=3->Blue 
+  private static String[] normal = {"\u001b[31m","\u001b[32m","\u001b[33m","\u001b[34m"};
+  private static String[] bold = {"\u001b[31;1m","\u001b[32;1m","\u001b[33;1m","\u001b[34;1m"};
+  private static String[] underline = {"\u001b[31;4m","\u001b[32;4m","\u001b[33;4m","\u001b[34;4m"};
+  private static String[] reversed = {"\u001b[31;7m","\u001b[32;7m","\u001b[33;7m","\u001b[34;7m"};
+
+  private static String reset = "\u001b[0m";
+
   private String race;
   private String className;
 
@@ -109,7 +118,7 @@ public class PlayerSpreadsheet extends Character {
       this.shield = armor;
       this.setDefense(this.getDefense() + shield.getDefense());
     } else {
-      System.out.println("Error on setting a new armor");
+      System.out.println(bold[2]+"Error on setting a new armor"+reset);
     }
   }
 
