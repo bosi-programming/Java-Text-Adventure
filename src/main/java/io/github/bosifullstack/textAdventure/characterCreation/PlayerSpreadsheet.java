@@ -10,10 +10,10 @@ import io.github.bosifullstack.textAdventure.magicSystem.Magic;
 import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 /**
- * Creates a player spreadsheet necessary for the playeable {@link Character} to
+ * Creates a player spreadsheet necessary for the playeable {@link Player} to
  * exist.
  */
-public class PlayerSpreadsheet extends Character {
+public class PlayerSpreadsheet extends Player {
 
   //index=0->Red, index=1->Green, index=2->Yellow, index=3->Blue 
   private static String[] normal = {"\u001b[31m","\u001b[32m","\u001b[33m","\u001b[34m"};
