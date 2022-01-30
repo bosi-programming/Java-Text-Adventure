@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import io.github.bosifullstack.textAdventure.characterCreation.EnemySpreadsheet;
 import io.github.bosifullstack.textAdventure.characterCreation.PlayerSpreadsheet;
+import io.github.bosifullstack.textAdventure.util.io.ScannerHelper;
 
 import static io.github.bosifullstack.textAdventure.util.StringColor.reversed;
 import static io.github.bosifullstack.textAdventure.util.StringColor.reset;
@@ -14,7 +15,7 @@ import static io.github.bosifullstack.textAdventure.util.StringColor.bold;
 public class BattleSystem {
 
   public static void battle(PlayerSpreadsheet player, EnemySpreadsheet enemy) {
-    Scanner in = new Scanner(System.in);
+    Scanner in = ScannerHelper.getInstance().getScanner();
     Random rand = new Random();
 
     while (enemy.getHealth() > 0) {

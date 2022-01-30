@@ -2,7 +2,7 @@ package io.github.bosifullstack.textAdventure.battleSystem;
 
 import java.util.Random;
 
-import io.github.bosifullstack.textAdventure.characterCreation.Character;
+import io.github.bosifullstack.textAdventure.characterCreation.Player;
 import io.github.bosifullstack.textAdventure.itemSystem.Item;
 import io.github.bosifullstack.textAdventure.itemSystem.Weapon;
 import io.github.bosifullstack.textAdventure.magicSystem.Magic;
@@ -19,7 +19,7 @@ public class Actions {
    * @param targetCharacter {@link Character} - Character that will take the
    *                        damage
    */
-  public static void dealAttackDamage(int attackDamage, Character targetCharacter) {
+  public static void dealAttackDamage(int attackDamage, Player targetCharacter) {
     int physicalDamage = rand.nextInt(attackDamage) - targetCharacter.getDefense();
     targetCharacter.setHealth(targetCharacter.getHealth() - physicalDamage);
     PrintTables.printEffectText(targetCharacter, physicalDamage);
@@ -32,7 +32,7 @@ public class Actions {
    * @param targetCharacter {@link Character} - Character that will take the
    *                        attack
    */
-  public static void dealAttackDamage(Weapon weapon, Character targetCharacter) {
+  public static void dealAttackDamage(Weapon weapon, Player targetCharacter) {
     int physicalDamage = rand.nextInt(weapon.getDamage()) - targetCharacter.getDefense();
     int magicalDamage = weapon.getElementalDamage()
         * typesRelation(weapon.getElementalType(), targetCharacter.getElementalWeakness());
@@ -48,7 +48,7 @@ public class Actions {
    * @param magic           {@link Magic} - Magic to be used
    * @param targetCharacter {@link Character} - Character that will take the magic
    */
-  public static void useMagic(Magic magic, Character targetCharacter) {
+  public static void useMagic(Magic magic, Player targetCharacter) {
     int magicEffect = magic.getEffect() * typesRelation(magic.getType(), targetCharacter.getElementalWeakness());
 
     targetCharacter.setHealth(targetCharacter.getHealth() - magicEffect);
@@ -61,7 +61,7 @@ public class Actions {
    * @param item            {@link Item} - Item to be used
    * @param targetCharacter {@link Character} - Character that will use the item
    */
-  public static void useItem(Item item, Character targetCharacter) {
+  public static void useItem(Item item, Player targetCharacter) {
     useMagic(item.getMagic(), targetCharacter);
   }
 

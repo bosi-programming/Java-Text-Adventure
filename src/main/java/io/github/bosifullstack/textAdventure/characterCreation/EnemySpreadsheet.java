@@ -6,7 +6,7 @@ import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 /** Creates a enemy spreadsheet to be used on the game */
 
-public class EnemySpreadsheet extends Character {
+public class EnemySpreadsheet extends Player {
   private int damage;
   private int chanceToDrop;
   private Item itemToDrop;

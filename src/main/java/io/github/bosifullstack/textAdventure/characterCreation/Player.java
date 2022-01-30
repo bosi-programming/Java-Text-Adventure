@@ -3,7 +3,7 @@ package io.github.bosifullstack.textAdventure.characterCreation;
 import io.github.bosifullstack.textAdventure.magicSystem.MagicType;
 
 /** Class that all type of characters inherit from */
-public class Character {
+public class Player {
   private String name;
   private int strength;
   private int dexterity;
@@ -21,7 +21,13 @@ public class Character {
   private MagicType elementalWeakness;
 
   /** Creates a basic default character */
-  public Character() {
+
+  /** NOTE
+  naming objects same as Java default ones is not a good practice
+   changing old class name 'Character' to 'Player'
+   */
+
+  public Player() {
     this.name = "Jorisvaldo";
     this.strength = 10;
     this.dexterity = 10;
@@ -51,7 +57,7 @@ public class Character {
    * @param elementalWeakness {@link MagicType} - {@link Character} elemental
    *                          weakness
    */
-  Character(String name, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma,
+  Player(String name, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma,
       MagicType elementalWeakness) {
     this.name = name;
     this.strength = strength;
@@ -69,22 +75,22 @@ public class Character {
     this.setElementalWeakness(elementalWeakness);
   }
 
-  /** @return int - {@link Character} defense */
+  /** @return int - {@link Player} defense */
   public int getDefense() {
     return defense;
   }
 
-  /** @param defense int - {@link Character} defense */
+  /** @param defense int - {@link Player} defense */
   public void setDefense(int defense) {
     this.defense = defense;
   }
 
-  /** @return int - {@link Character} health points */
+  /** @return int - {@link Player} health points */
   public int getHealth() {
     return this.health;
   }
 
-  /** @param value int - {@link Character} health points */
+  /** @param value int - {@link Player} health points */
   public void setHealth(int value) {
     if (value <= this.maxHealth) {
       this.health = value;
@@ -93,112 +99,112 @@ public class Character {
     }
   }
 
-  /** @return {@link MagicType} - {@link Character} elemental weakness */
+  /** @return {@link MagicType} - {@link Player} elemental weakness */
   public MagicType getElementalWeakness() {
     return elementalWeakness;
   }
 
-  /** @param elementalWeakness {@link MagicType} - {@link Character} elemental weakness */
+  /** @param elementalWeakness {@link MagicType} - {@link Player} elemental weakness */
   public void setElementalWeakness(MagicType elementalWeakness) {
     this.elementalWeakness = elementalWeakness;
   }
 
-  /** @return String - {@link Character} name */
+  /** @return String - {@link Player} name */
   public String getName() {
     return name;
   }
 
-  /** @param name String - {@link Character} new name */
+  /** @param name String - {@link Player} new name */
   public void setName(String name) {
     this.name = name;
   }
 
-  /** @return int - {@link Character} strength */
+  /** @return int - {@link Player} strength */
   public int getStrength() {
     return strength;
   }
 
-  /** @param strength int - {@link Character} new strength */
+  /** @param strength int - {@link Player} new strength */
   public void setStrength(int strength) {
     this.strength = strength;
   }
 
-  /** @return int - {@link Character} dexterity */
+  /** @return int - {@link Player} dexterity */
   public int getDexterity() {
     return dexterity;
   }
 
-  /** @param dexterity int - {@link Character} new dexterity */
+  /** @param dexterity int - {@link Player} new dexterity */
   public void setDexterity(int dexterity) {
     this.dexterity = dexterity;
   }
 
-  /** @return int - {@link Character} constitution */
+  /** @return int - {@link Player} constitution */
   public int getConstitution() {
     return constitution;
   }
 
-  /** @param constitution int - {@link Character} new constitution */
+  /** @param constitution int - {@link Player} new constitution */
   public void setConstitution(int constitution) {
     this.constitution = constitution;
   }
 
-  /** @return int - {@link Character} intelligence */
+  /** @return int - {@link Player} intelligence */
   public int getIntelligence() {
     return intelligence;
   }
 
-  /** @param intelligence int - {@link Character} new intelligence */
+  /** @param intelligence int - {@link Player} new intelligence */
   public void setIntelligence(int intelligence) {
     this.intelligence = intelligence;
   }
 
-  /** @return int - {@link Character} wisdom */
+  /** @return int - {@link Player} wisdom */
   public int getWisdom() {
     return wisdom;
   }
 
-  /** @param wisdom int - {@link Character} new wisdom */
+  /** @param wisdom int - {@link Player} new wisdom */
   public void setWisdom(int wisdom) {
     this.wisdom = wisdom;
   }
 
-  /** @return int - {@link Character} charisma */
+  /** @return int - {@link Player} charisma */
   public int getCharisma() {
     return charisma;
   }
 
-  /** @param charisma int - {@link Character} new charisma */
+  /** @param charisma int - {@link Player} new charisma */
   public void setCharisma(int charisma) {
     this.charisma = charisma;
   }
 
-  /** @return int - {@link Character} maximum health points */
+  /** @return int - {@link Player} maximum health points */
   public int getMaxHealth() {
     return maxHealth;
   }
 
-  /** @param maxHealth int - {@link Character} new maximum health points */
+  /** @param maxHealth int - {@link Player} new maximum health points */
   public void setMaxHealth(int maxHealth) {
     this.maxHealth = maxHealth;
   }
 
-  /** @return int - {@link Character} magical points */
+  /** @return int - {@link Player} magical points */
   public int getMp() {
     return mp;
   }
 
-  /** @param mp int - {@link Character} magical points */
+  /** @param mp int - {@link Player} magical points */
   public void setMp(int mp) {
     this.mp = mp;
   }
 
-  /** @return int - {@link Character} maximum magical points */
+  /** @return int - {@link Player} maximum magical points */
   public int getMaxMp() {
     return maxMp;
   }
 
-  /** @param maxMp int - {@link Character} maximum magical points */
+  /** @param maxMp int - {@link Player} maximum magical points */
   public void setMaxMp(int maxMp) {
     this.maxMp = maxMp;
   }

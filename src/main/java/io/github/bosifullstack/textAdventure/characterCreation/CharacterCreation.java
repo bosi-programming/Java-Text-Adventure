@@ -9,6 +9,7 @@ import io.github.bosifullstack.textAdventure.magicSystem.CureMagic;
 import io.github.bosifullstack.textAdventure.magicSystem.FireMagic;
 import io.github.bosifullstack.textAdventure.magicSystem.Magic;
 import io.github.bosifullstack.textAdventure.magicSystem.WaterMagic;
+import io.github.bosifullstack.textAdventure.util.io.ScannerHelper;
 
 /**
  * {@link Character} creation class used to create a new character according to
@@ -29,7 +30,7 @@ public class CharacterCreation {
   public static PlayerSpreadsheet createCharacter() {
     PlayerSpreadsheet player = new PlayerSpreadsheet();
 
-    Scanner in = new Scanner(System.in);
+    Scanner in = ScannerHelper.getInstance().getScanner();
 
     System.out.println(bold[2]+"Welcome to Java Text Game!");
     System.out.println("_____________________________________________"+reset);

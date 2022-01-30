@@ -3,8 +3,9 @@ package io.github.bosifullstack.textAdventure.battleSystem;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import io.github.bosifullstack.textAdventure.characterCreation.Character;
+
 import io.github.bosifullstack.textAdventure.characterCreation.EnemySpreadsheet;
+import io.github.bosifullstack.textAdventure.characterCreation.Player;
 import io.github.bosifullstack.textAdventure.characterCreation.PlayerSpreadsheet;
 import io.github.bosifullstack.textAdventure.itemSystem.Item;
 import io.github.bosifullstack.textAdventure.magicSystem.Magic;
@@ -56,7 +57,7 @@ public class PrintTables {
    * @param character {@link Character} - Character that will receive the effect
    * @param effect    int - total value of the effect
    */
-  public static void printEffectText(Character character, int effect) {
+  public static void printEffectText(Player character, int effect) {
     if (effect >= 0) {
       System.out.println("\t> "+bold[0] + character.getName() + " receives " + effect + " of damage."+reset);
     } else {
@@ -71,7 +72,7 @@ public class PrintTables {
    * @param player {@link Character} - The one that will use the magic
    * @param enemy  {@link Character} - Possible receiver of a magic
    */
-  public static void printMagicTable(ArrayList<Magic> magics, Character player, Character enemy) {
+  public static void printMagicTable(ArrayList<Magic> magics, Player player, Player enemy) {
     int i = 0;
     for (Magic magic : magics) {
       i++;
@@ -96,7 +97,7 @@ public class PrintTables {
    * @param player {@link Character} - The one that will use the magic
    * @param enemy  {@link Character} - Possible receiver of a magic
    */
-  public static void printItemsTable(ArrayList<Item> items, Character player, Character enemy) {
+  public static void printItemsTable(ArrayList<Item> items, Player player, Player enemy) {
     int i = 0;
     for (Item item : items) {
       i++;
